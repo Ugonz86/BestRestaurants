@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model List<BestRestaurants.Models.Cousine>;
+
+<h2>Are you sure you want to delete all cousine types?</h2>
+<br>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="DeleteAll" />
+}
+
+<br>
+<br>
+@Html.ActionLink("Back to the cousine type list", "Index")

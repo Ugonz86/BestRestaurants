@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@using BestRestaurants.Models;
+@model BestRestaurants.Models.Cousine;
+
+<h2>Cousine Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<br>
+<ul>
+@if (@Model.RestaurantGroup.Count == 0)
+{
+<p>No Restaurants found</p>
+}
+
+@foreach (Restaurant restaurant in @Model.RestaurantGroup)
+{
+  <ul>Description: @restaurant.Description</ul>
+}
+</ul>
+<hr />
+<p>@Html.ActionLink("Back to the cousine type list", "Index")</p>
+<p>@Html.ActionLink("Edit Cousine Type", "Edit", new { id = Model.CousineId })</p>
+<p>@Html.ActionLink("Delete Cousine Type", "Delete", new { id = Model.CousineId })</p>
