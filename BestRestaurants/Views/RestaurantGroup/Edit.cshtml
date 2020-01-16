@@ -1,13 +1,12 @@
 @{
   Layout = "_Layout";
 }
-
 @model BestRestaurants.Models.Restaurant
-
-<h2>Edit</h2>
+<center>
+<h1>Edit</h1>
+<br>
 <hr />
-
-<h4>Edit this task: @Html.DisplayFor(model => model.Description)</h4>
+<h4>Edit this restaurant: @Html.DisplayFor(model => model.Description)</h4>
 <br>
 
 @using (Html.BeginForm())
@@ -19,8 +18,9 @@
 
     @Html.LabelFor(model => model.Cousine)
     @Html.DropDownList("CousineId")
-
-    <input type="submit" value="Save" />
+    <button class="btn btn-success" type="submit">Save</button>
 }
 <hr />
+<br>
 <p>@Html.ActionLink("Back to list", "Index")</p>
+</center>

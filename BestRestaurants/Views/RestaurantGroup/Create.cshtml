@@ -3,19 +3,22 @@
 }
 
 @model BestRestaurants.Models.Restaurant
-
-<h4>Add a new task</h4>
+<center>
+  
+</center>
+<h4>Add New Restaurant</h4>
 <hr />
 
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Description)
+    @* @Html.TextBoxFor(model => model.Name) *@
     @Html.TextBoxFor(model => model.Description)
-
     @Html.LabelFor(model => model.Cousine)
     @Html.DropDownList("CousineId")
-
-    <input type="submit" value="Add new restaurant" class="btn btn-default" />
+    <br>
+    <br>
+    <button class="btn btn-success" type="submit">Add New Restaurant</button>
 }
 <hr />
-<p>@Html.ActionLink("Show all restaurants", "Index")</p>
+<p>@Html.ActionLink("Restaurant Overview", "Index")</p>

@@ -2,17 +2,19 @@
   Layout = "_Layout";
 }
 
+<center>
+  @model List<BestRestaurants.Models.Restaurant>;
 
-@model List<BestRestaurants.Models.Restaurant>;
+  <h2>Are you sure you want to delete all restaurant list?</h2>
+  <br>
 
-<h2>Are you sure you want to delete all restaurant list?</h2>
-<br>
+  @using (Html.BeginForm())
+  {
+      <center><button class="btn btn-success" type="submit" value="DeleteAll" />Delete All</center>
+  }
 
-@using (Html.BeginForm())
-{
-    <input type="submit" value="DeleteAll" />
-}
+  <br>
+  <br>
+  <p>@Html.ActionLink("Restaurant Overview", "Index")</p>
 
-<br>
-<br>
-@Html.ActionLink("Back to restaurant list", "Index")
+</center>

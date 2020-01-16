@@ -11,6 +11,7 @@ namespace BestRestaurants.Models
 
         public int CousineId { get; set; }
         public string Name { get; set; }
+        // public int RestaurantId { get; set; }
         public virtual ICollection<Restaurant> RestaurantGroup { get; set; }
     }
 }

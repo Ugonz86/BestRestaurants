@@ -1,12 +1,14 @@
 @{
   Layout = "_Layout";
 }
-
 @model BestRestaurants.Models.Cousine
-
-<h2>Edit</h2>
+<center>
+<h1>Edit</h1>
+<br>
+<hr>
 
 <h4>Edit this cousine type: @Html.DisplayFor(model => model.Name)</h4>
+<br>
 
 @using (Html.BeginForm())
 {
@@ -15,6 +17,10 @@
     @Html.LabelFor(model => model.Name)
     @Html.EditorFor(model => model.Name)
 
-    <input type="submit" value="Save" />
+    <button class="btn btn-success" type="submit">Save</button>
 }
-<p>@Html.ActionLink("Back to the Cousine Type list", "Index")</p>
+<hr>
+<br>
+<p>@Html.ActionLink("Cousine Type Overview", "Index")</p>
+
+</center>

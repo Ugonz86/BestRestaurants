@@ -1,24 +1,28 @@
 @{
   Layout = "_Layout";
 }
-
 @using BestRestaurants.Models;
 @model List<BestRestaurants.Models.Restaurant>;
 
+<center>
 <h1>Restaurants</h1>
+<br>
 <hr />
 
 @if (@Model.Count == 0)
 {
-  <h3>No restaurants have been added yet!</h3>
+  <h4>No restaurants have been added yet!</h4>
 }
 
 @foreach (Restaurant restaurant in Model)
 {
-  <ul>@Html.ActionLink($"{restaurant.Description}", "Details", new { id = restaurant.RestaurantId }) | @restaurant.Cousine.Name</ul>
+  <h4>@Html.ActionLink($"{restaurant.Description}", "Details", new { id = restaurant.RestaurantId }) | @restaurant.Cousine.Name</h4>
 }
 
 <hr />
+<br>
 <p>@Html.ActionLink("Add new restaurant", "Create")</p>
 <p>@Html.ActionLink("Delete All restaurants", "DeleteAll")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
+
+</center>

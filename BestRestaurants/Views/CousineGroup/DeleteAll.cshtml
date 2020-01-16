@@ -1,17 +1,19 @@
 @{
   Layout = "_Layout";
 }
-
-@model List<BestRestaurants.Models.Cousine>;
+<center>
+  @model List<BestRestaurants.Models.Cousine>;
 
 <h2>Are you sure you want to delete all cousine types?</h2>
 <br>
 
 @using (Html.BeginForm())
 {
-    <input type="submit" value="DeleteAll" />
+    <center><button class="btn btn-success" type="submit" value="DeleteAll" />Delete All</center>
 }
 
 <br>
 <br>
-@Html.ActionLink("Back to the cousine type list", "Index")
+<p>@Html.ActionLink("Back to the cousine type list", "Index")</p>
+
+</center>

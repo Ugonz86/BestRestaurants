@@ -1,24 +1,27 @@
 @{
   Layout = "_Layout";
 }
-
+<center>
 @using BestRestaurants.Models;
 @model List<BestRestaurants.Models.Cousine>;
 
-<h1>Cousine Type List</h1>
+<h1>Cousine Types</h1>
+<br>
 <hr />
 
 @if (@Model.Count == 0)
 {
-<h3>No cousine types have been added yet!</h3>
+<h4>No cousine types have been added yet!</h4>
 }
 
 @foreach (Cousine cousine in Model)
 {
-<ul>@Html.ActionLink($"{cousine.Name}", "Details", new { id = cousine.CousineId })</ul>
+<h4>@Html.ActionLink($"{cousine.Name}", "Details", new { id = cousine.CousineId })</h4>
 }
 
 <hr />
+<br> 
 <p>@Html.ActionLink("Add New Cousine Type", "Create")</p>
 <p>@Html.ActionLink("Delete All Cousine Types", "DeleteAll")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
+</center>

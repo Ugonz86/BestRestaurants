@@ -1,16 +1,17 @@
 @{
   Layout = "_Layout";
 }
-
+<center>
 @model BestRestaurants.Models.Cousine
 
-<h2>Are you sure you want to delete this?</h2>
+<h1>Are you sure you want to delete @Html.DisplayFor(model => model.Name)?</h1>
 <br>
 
-@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
 @using (Html.BeginForm())
 {
-    <input type="submit" value="Delete" />
+    <button class="btn btn-success" type="submit">Delete</button>
 }
+<hr>
 <br>
-@Html.ActionLink("Back to cousine type list", "Index")
+<p>@Html.ActionLink("Back to cousine type list", "Index")</p>
+</center>
